@@ -47,3 +47,11 @@ elif dayChoice == "5":
   print("Part 1: ", dayFive.partOne(), " in ", round(time.time() - startTime, 2), "s")
   startTime = time.time()
   print("Part 2: ", dayFive.partTwo(), " in ", round(time.time() - startTime, 2), "s")
+elif dayChoice == "6":
+  from day6 import DaySix
+  y = fileOpenLines(6,"s")
+  daySix = DaySix(y)
+  startTime = time.time()
+  print("Part 1: ", daySix.partOne(), " in ", round(time.time() - startTime, 2), "s")
+  startTime = time.time()
+  print("Part 2: ", daySix.partTwo(), " in ", round(time.time() - startTime, 2), "s")
