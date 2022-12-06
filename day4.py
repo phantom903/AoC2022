@@ -12,9 +12,6 @@ class DayThree:
       grp1, grp2 = line.split(',')
       grp1 = [int(i) for i in grp1.split('-')]
       grp2 = [int(i) for i in grp2.split('-')]
-      #full1 = [i for i in range(int(grp1[0]), int(grp1[1]))]
-      #full2 = [i for i in range(int(grp2[0]), int(grp2[1]))]
-      #if set(full1).issubset(set(full2)) or set(full2).issubset(set(full1)) and set(full1) != set(full2):
       if (grp1[0] <= grp2[0] and grp2[1] <= grp1[1]) or (grp2[0] <= grp1[0] and grp1[1] <= grp2[1]):
         total += 1
     return total
@@ -25,7 +22,6 @@ class DayThree:
       grp1, grp2 = line.split(',')
       grp1 = [int(i) for i in grp1.split('-')]
       grp2 = [int(i) for i in grp2.split('-')]
-      #if (grp1[0] <= grp2[1] and grp1[1] > grp2[0]) or (grp2[0] <= grp1[1] and grp2[1] > grp1[0]):
       if len(set(range(grp1[0], grp1[1]+1)).intersection(set(range(grp2[0], grp2[1]+1)))) > 0:     
         total += 1
     return total

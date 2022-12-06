@@ -31,3 +31,19 @@ elif dayChoice == "3":
   print("Part 1: ", dayThree.partOne(), " in ", round(time.time() - startTime, 2), "s")
   startTime = time.time()
   print("Part 2: ", dayThree.partTwo(), " in ", round(time.time() - startTime, 2), "s")
+elif dayChoice == "4":
+  from day4 import DayFour
+  y = fileOpenLines(4)
+  dayFour = DayFour(y)
+  startTime = time.time()
+  print("Part 1: ", dayFour.partOne(), " in ", round(time.time() - startTime, 2), "s")
+  startTime = time.time()
+  print("Part 2: ", dayFour.partTwo(), " in ", round(time.time() - startTime, 2), "s")
+elif dayChoice == "5":
+  from day5 import DayFive
+  y = fileOpenLines(5,"s")
+  dayFive = DayFive(y)
+  startTime = time.time()
+  print("Part 1: ", dayFive.partOne(), " in ", round(time.time() - startTime, 2), "s")
+  startTime = time.time()
+  print("Part 2: ", dayFive.partTwo(), " in ", round(time.time() - startTime, 2), "s")
