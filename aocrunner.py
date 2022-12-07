@@ -52,6 +52,6 @@ elif dayChoice == "6":
   y = fileOpenLines(6,"s")
   daySix = DaySix(y)
   startTime = time.time()
-  print("Part 1: ", daySix.partOne(), " in ", round(time.time() - startTime, 2), "s")
+  print("Part 1: ", daySix.signalParse(4), " in ", round(time.time() - startTime, 2), "s")
   startTime = time.time()
-  print("Part 2: ", daySix.partTwo(), " in ", round(time.time() - startTime, 2), "s")
+  print("Part 2: ", daySix.signalParse(14), " in ", round(time.time() - startTime, 2), "s")
