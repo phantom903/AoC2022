@@ -55,3 +55,19 @@ elif dayChoice == "6":
   print("Part 1: ", daySix.signalParse(4), " in ", round(time.time() - startTime, 2), "s")
   startTime = time.time()
   print("Part 2: ", daySix.signalParse(14), " in ", round(time.time() - startTime, 2), "s")
+elif dayChoice == "7":
+  from day7 import DaySeven
+  y = fileOpenLines(7,"s")
+  daySeven = DaySeven(y)
+  startTime = time.time()
+  print("Part 1: ", daySeven.partOne(), " in ", round(time.time() - startTime, 2), "s")
+  startTime = time.time()
+  print("Part 2: ", daySeven.partTwo(), " in ", round(time.time() - startTime, 2), "s")
+elif dayChoice == "8":
+  from day8 import DayEight
+  y = fileOpenIntGrid(8)
+  dayEight = DayEight(y)
+  startTime = time.time()
+  print("Part 1: ", dayEight.partOne(), " in ", round(time.time() - startTime, 2), "s")
+  startTime = time.time()
+  print("Part 2: ", dayEight.partTwo(), " in ", round(time.time() - startTime, 2), "s")

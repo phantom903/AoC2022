@@ -34,6 +34,14 @@ def fileOpenLines(dayNum, rtnType="s"):
   else:
     return x
 
+def fileOpenIntGrid(dayNum):
+  f = open("input/day" + str(dayNum) + ".txt")
+  x = f.read().splitlines()
+  f.close()
+  for i in range(len(x)):
+    x[i] = [int(val) for val in x[i]]
+  return x
+  
 ##
 ## Return a list of ints in a string, other chars
 ## are ignored
