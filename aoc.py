@@ -70,6 +70,10 @@ def fileOpenNewLines(dayNum):
   entries.append(entry.strip())
   return entries
 
+##
+## Returns all neighbours of current location in mem
+## looking diagonally if diag is True
+##
 def neighbours(current, mem, diag=False):
   res = []
   if diag:
@@ -85,15 +89,67 @@ def neighbours(current, mem, diag=False):
       res.append((row,col))
   return res
 
+##
+## Returns the manhattan distance between two points
+##
 def manhattan(a, b):
   return sum(abs(val1-val2) for val1, val2 in zip(a,b))
 
+##
+## Returns true if a and b are diagonal to each other
+##
+def isDiagonal(a, b):
+  return a[0] != b[0] and a[1] != b[1]
+
+##
+## Returns a list of all adjacent locations to loc
+##
+def adjacents(loc):
+  return [
+    (loc[0]+1, loc[1]), (loc[0]-1, loc[1]), (loc[0], loc[1]+1), (loc[0], loc[1]-1),
+    (loc[0]+1, loc[1]+1), (loc[0]-1, loc[1]-1), (loc[0]+1, loc[1]-1), (loc[0]-1, loc[1]+1)
+  ]
+
+##
+## Performs a move in the direction specified
+## and returns the new location
+##
+def doMove(loc, direction):
+  if direction == 'N':
+    return (loc[0], loc[1]-1)
+  elif direction == 'S':
+    return (loc[0], loc[1]+1)
+  elif direction == 'E':
+    return (loc[0]+1, loc[1])
+  elif direction == 'W':
+    return (loc[0]-1, loc[1])
+  elif direction == 'U':
+    return (loc[0], loc[1]-1)
+  elif direction == 'D':
+    return (loc[0], loc[1]+1)
+  elif direction == 'R':
+    return (loc[0]+1, loc[1])
+  elif direction == 'L':
+    return (loc[0]-1, loc[1])
+
+##
+## Returns true if a and b are adjacent
+##
+def isAdjacent(a, b):
+  return b in adjacents(a)
+
+##
+## Prints a 2D array
+##
 def printBoard(mem):
   for line in mem:
     print(''.join([str(i) for i in line]))
   print('============')
   return
 
+##
+## Returns a cached version of a function
+##
 def memoize(func):
   cache = dict()
 
