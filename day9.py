@@ -1,14 +1,14 @@
 from aoc import *
 
 TESTDATA = [
-  'R 4',
-  'U 4',
-  'L 3',
-  'D 1',
-  'R 4',
-  'D 1',
-  'L 5',
-  'R 2'
+  'R 5',
+  'U 8',
+  'L 8',
+  'D 3',
+  'R 17',
+  'D 10',
+  'L 25',
+  'R 20'
 ]
 
 class DayNine:
@@ -16,8 +16,8 @@ class DayNine:
   mem = []
 
   def __init__(self, mem):
-    for line in mem:
-    # for line in TESTDATA:
+    # for line in mem:
+    for line in TESTDATA:
       x, y = line.split(' ')
       self.mem.append([x, int(y)])
     
@@ -43,11 +43,11 @@ class DayNine:
       for _ in range(self.mem[i][1]):
         oldknots[0] = knots[0]
         knots[0] = doMove(knots[0], self.mem[i][0])
-        for j in range(0, 10):
+        for j in range(1, 10):
+          oldknots[j] = knots[j]
           if manhattan(knots[j-1], knots[j]) >= 2 and not isAdjacent(knots[j-1], knots[j]):
             knots[j] = oldknots[j-1]
         tLocs.append(knots[9])
-          
     return len(set(tLocs))
 
 if __name__ == "__main__":

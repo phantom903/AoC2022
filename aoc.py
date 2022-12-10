@@ -26,7 +26,10 @@ def binaryPass(binChars, data):
 ## a list of lines - converted to ints if rtnType "i"
 ##
 def fileOpenLines(dayNum, rtnType="s"):
-  f = open("input/day" + str(dayNum) + ".txt")
+  if rtnType == "t":
+    f = open("input/day" + str(dayNum) + "test.txt")
+  else:
+    f = open("input/day" + str(dayNum) + ".txt")
   x = f.read().splitlines()
   f.close()
   if rtnType == "i":
@@ -34,6 +37,10 @@ def fileOpenLines(dayNum, rtnType="s"):
   else:
     return x
 
+##
+## Read input file for Day dayNum and split input into
+## a list of lists of ints
+##
 def fileOpenIntGrid(dayNum):
   f = open("input/day" + str(dayNum) + ".txt")
   x = f.read().splitlines()
