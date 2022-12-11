@@ -13,7 +13,7 @@ class ElfCPU:
     for _ in range(runs):
       xPos = (self.xReg + 1 % 40 ) 
       if (self.cycles + 1) % 40 in [xPos - 1, xPos, xPos + 1]:
-        self.screen[self.cycles] = '#'
+        self.screen[self.cycles] = chr(9608)
       self.cycles += 1
       if self.cycles in self.cycleBreaks:
         self.signal += (self.xReg * self.cycles)
