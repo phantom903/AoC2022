@@ -106,7 +106,7 @@ def manhattan(a, b):
 ## Returns true if a and b are diagonal to each other
 ##
 def isDiagonal(a, b):
-  return a[0] != b[0] and a[1] != b[1]
+  return (a[0] != b[0]) and (a[1] != b[1]) and (manhattan(a, b) % 2 == 0)
 
 ##
 ## Returns a list of all adjacent locations to loc
@@ -130,10 +130,10 @@ def doMove(loc, direction):
     return (loc[0]+1, loc[1])
   elif direction == 'W':
     return (loc[0]-1, loc[1])
-  elif direction == 'U':
-    return (loc[0], loc[1]-1)
   elif direction == 'D':
     return (loc[0], loc[1]+1)
+  elif direction == 'U':
+    return (loc[0], loc[1]-1)
   elif direction == 'R':
     return (loc[0]+1, loc[1])
   elif direction == 'L':

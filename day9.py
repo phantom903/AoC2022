@@ -8,7 +8,7 @@ TESTDATA = [
   'R 17',
   'D 10',
   'L 25',
-  'R 20'
+  'U 20'
 ]
 
 class DayNine:
@@ -41,12 +41,9 @@ class DayNine:
     tLocs = [(0,0)]
     for i in range(len(self.mem)):
       for _ in range(self.mem[i][1]):
-        oldknots[0] = knots[0]
         knots[0] = doMove(knots[0], self.mem[i][0])
         for j in range(1, 10):
-          oldknots[j] = knots[j]
-          if manhattan(knots[j-1], knots[j]) >= 2 and not isAdjacent(knots[j-1], knots[j]):
-            knots[j] = oldknots[j-1]
+          
         tLocs.append(knots[9])
     return len(set(tLocs))
 
