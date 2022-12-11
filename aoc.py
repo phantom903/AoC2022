@@ -168,3 +168,20 @@ def memoize(func):
       return result
 
   return memoized_func
+
+##
+## Returns an (x, y) tuple of fromLoc moved towards tgtLoc
+## according to the rules of AoC 2022 Day 9
+##
+def moveTowards(tgtLoc, fromLoc):
+  x,y = fromLoc[0], fromLoc[1]
+  dx = tgtLoc[0] - fromLoc[0]
+  dy = tgtLoc[1] - fromLoc[1]
+  if abs(dx) == 2 and not dy:
+    x += 1 if dx > 0 else -1
+  elif abs(dy) == 2 and not dx:
+    y += 1 if dy > 0 else -1
+  elif (abs(dy) == 2 and abs(dx) in (1,2)) or (abs(dx) == 2 and abs(dy) in (1,2)):
+    x += 1 if dx > 0 else -1
+    y += 1 if dy > 0 else -1
+  return (x,y)  

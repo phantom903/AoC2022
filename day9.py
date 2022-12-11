@@ -16,8 +16,8 @@ class DayNine:
   mem = []
 
   def __init__(self, mem):
-    # for line in mem:
-    for line in TESTDATA:
+    for line in mem:
+    # for line in TESTDATA:
       x, y = line.split(' ')
       self.mem.append([x, int(y)])
     
@@ -37,13 +37,13 @@ class DayNine:
 
   def partTwo(self):
     knots = [(0,0) for _ in range(10)]
-    oldknots = [(0,0) for _ in range(10)]
     tLocs = [(0,0)]
     for i in range(len(self.mem)):
       for _ in range(self.mem[i][1]):
         knots[0] = doMove(knots[0], self.mem[i][0])
         for j in range(1, 10):
-          
+          if not isAdjacent(knots[j], knots[j-1]):
+            knots[j] = moveTowards(knots[j-1], knots[j])          
         tLocs.append(knots[9])
     return len(set(tLocs))
 
