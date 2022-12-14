@@ -38,6 +38,30 @@ def fileOpenLines(dayNum, rtnType="s"):
     return x
 
 ##
+## Read input file for Day dayNum and return a string
+## of the entire file
+##
+def fileOpenRaw(dayNum):
+  f = open("input/day" + str(dayNum) + ".txt")
+  x = f.read()
+  f.close()
+  return x
+
+##
+## Bubble sort a list depending on compare function
+## which must return True if left is less than right
+## if no compare function is passed, use generic compare
+##
+def bubblesort(toSort, compareFn=lambda left, right: left < right):
+  for i in range(len(toSort)):
+    for j in range(len(toSort) - 1):
+      if compareFn(toSort[j+ 1], toSort[j]):
+        temp = toSort[j]
+        toSort[j] = toSort[j + 1]
+        toSort[j + 1] = temp
+  return toSort
+
+##
 ## Read input file for Day dayNum and split input into
 ## a list of lists of ints
 ##
@@ -184,4 +208,4 @@ def moveTowards(tgtLoc, fromLoc):
   elif (abs(dy) == 2 and abs(dx) in (1,2)) or (abs(dx) == 2 and abs(dy) in (1,2)):
     x += 1 if dx > 0 else -1
     y += 1 if dy > 0 else -1
-  return (x,y)  
+  return (x,y)
