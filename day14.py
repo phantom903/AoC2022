@@ -7,11 +7,7 @@ class DayFourteen:
   def __init__(self, mem):
     for line in mem:
       self.rocks.append(line)
-    self.minX = int(min([min([[int(x) for x in rock.split(',')][0] for rock in rocks.split(' -> ')]) for rocks in self.rocks]))
-    self.maxX = int(max([max([[int(x) for x in rock.split(',')][0] for rock in rocks.split(' -> ')]) for rocks in self.rocks]))
-    self.minY = int(min([min([[int(x) for x in rock.split(',')][1] for rock in rocks.split(' -> ')]) for rocks in self.rocks]))
     self.maxY = int(max([max([[int(x) for x in rock.split(',')][1] for rock in rocks.split(' -> ')]) for rocks in self.rocks]))
-    self.adjust = self.minX - 1
     self.cave = [['.' for x in range(0, 1000)] for y in range(0, self.maxY + 2)]
     self.p1 = 0
   
