@@ -1,0 +1,2 @@
+c:\Users\ponti\OneDrive\Documents\development\AoC2022\obj\Debug\net6.0\AoC2022.AssemblyInfoInputs.cache
+c:\Users\ponti\OneDrive\Documents\development\AoC2022\obj\Debug\net6.0\AoC2022.AssemblyInfo.fs

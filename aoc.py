@@ -20,7 +20,6 @@ def showDups(x):
 def binaryPass(binChars, data):
   return int("".join(["1" if i in binChars else "0" for i in data]), 2)
 
-
 ##
 ## Read input file for Day dayNum and split input into
 ## a list of lines - converted to ints if rtnType "i"
