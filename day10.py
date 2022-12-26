@@ -13,7 +13,7 @@ class DayTen:
     return self.elfCpu.run()
 
   def partTwo(self):
-    self.elfCpu.printScreen()
+    self.elfCpu.printBetterScreen()
     return input("What text is on the screen?")
 
 if __name__ == "__main__":

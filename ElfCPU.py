@@ -1,3 +1,5 @@
+import tkinter as tk
+
 class ElfCPU:
 
   def __init__(self, mem, xReg=1):
@@ -45,3 +47,16 @@ class ElfCPU:
         output += '\n'
     print(output)
     return
+  
+  def printBetterScreen(self):
+    window = tk.Tk()
+    window.rowconfigure([0, 1, 2, 3, 4, 5], minsize = 20)
+    window.columnconfigure([x for x in range(40)], minsize = 16)
+    for i in range(len(self.screen)):
+      if self.screen[i] == ' ':
+        label = tk.Label(text = ' ', bg = 'white', fg = 'black')
+        label.grid(row = i // 40, column = i % 40, sticky = 'nsew')
+      else:
+        label = tk.Label(text = ' ', bg = 'black', fg = 'white')
+        label.grid(row = i // 40, column = i % 40, sticky = 'nsew')
+    window.mainloop()

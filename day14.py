@@ -42,18 +42,16 @@ class DayFourteen:
     while lastDropped[1] != self.maxY + 1:
       count += 1
       lastDropped = self.dropSand(500, 0)
-    self.p1 = count -1
+    self.p1 = count
     return count - 1
 
   def partTwo(self):
     lastDropped = (0, 0)
     count = 0
-    for rock in self.rocks:
-      self.addPath(rock)
     while lastDropped != (500,0):
       count += 1
       lastDropped = self.dropSand(500, 0)
-    return count + self.p1 + 1
+    return count + self.p1
 
 if __name__ == "__main__":
   y = fileOpenLines(14)

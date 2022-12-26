@@ -43,7 +43,7 @@ class DayTwentyTwo:
           elif nextPos[0] < 0:
             nextPos = (len(self.map[nextPos[1]]) - len(self.map[nextPos[1]].rstrip()) - 1, nextPos[1])
           while nextPos[1] >= yBound or (self.map[nextPos[1]][nextPos[0]] == ' ' and dir[facing] == 'D'):
-            nextPos = doMove((nextPos[0], yBound), dir[facing])
+            nextPos = doMove((nextPos[0], yBound - 1), dir[facing])
           while nextPos[1] < 0 or (self.map[nextPos[1]][nextPos[0]] == ' ' and dir[facing] == 'U'):
             nextPos = doMove((nextPos[0], 0), dir[facing])
           if self.map[nextPos[1]][nextPos[0]] != '#':
